@@ -3,10 +3,10 @@ import time
 import telebot
 import os
 
-BOT_TOKEN = os.getenv('BOT_TOKEN')
-CHANNEL_ID = os.getenv('CHANNEL_ID')
+BOT_TOKEN = os.getenv('7276811839:AAHzIbQP-EwJVgd9YgdvlXm4bMWdjRScPlU')
+CHANNEL_ID = os.getenv('@trx1minsg')
 
-bot = telebot.TeleBot(BOT_TOKEN)
+bot = telebot.TeleBot(7276811839:AAHzIbQP-EwJVgd9YgdvlXm4bMWdjRScPlU)
 
 def get_latest_block_hash():
     url = "https://apilist.tronscanapi.com/api/block/latest"
@@ -23,7 +23,7 @@ last_sent_hash = None
 while True:
     block_hash = get_latest_block_hash()
     if block_hash and block_hash != last_sent_hash:
-        message = f"🔗 Tron Latest Block Hash:\n`{block_hash}`"
+        message = f"🔗 Tron Latest Block Hash:\n{block_hash}"
         bot.send_message(CHANNEL_ID, message, parse_mode='Markdown')
         last_sent_hash = block_hash
     time.sleep(60)
